@@ -108,7 +108,8 @@ rcon('clientkick '.$i_id, '');
 	} 
 }
 
-
+if(!empty($x_addr[0]))
+{
 $dat = '.';
 $x_addr = explode(".", $i_ip);
 $result = $db2->query("SELECT * FROM x_ranges WHERE ip_ranges='$x_addr[0].$dat.$x_addr[1]'");
@@ -119,7 +120,7 @@ $result = $db2->query("SELECT * FROM x_ranges WHERE ip_ranges='$x_addr[0].$dat.$
   rcon('clientkick '. $i_id, '');
  exit;  
 	}
-
+}
 
 
 
